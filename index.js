@@ -37,10 +37,15 @@ function redirect() {
 }
 
 function goToPage(page) {
-    if (!page.includes("https://")) {
-        page = "https://" + page;
+    console.log(page)
+    if (page == ""){
+        return
     }
-    sitesVisited.push(page);
+    else{
+        if (page == undefined) {
+            return
+        }
+    }
     iFrameID.src = page;
 }
 
@@ -60,16 +65,38 @@ function Back() {
         index = 1
     }
     index -= 1
-    
+    if (index == NaN) {
+        index = sitesVisited.findIndex(iFrameID.src)
+    }
+    else{
+        if (index == undefined){
+            index = sitesVisited.findIndex(iFrameID.src)
+        }
+    }
     goToPage(sitesVisited[index]);
+    console.log(sitesVisited);
+    console.log(index);
 }
 
 function Forward() {
     index += 1
     if (index > sitesVisited.length-1) {
-        index = sitesVisited.langth-1
+        index = sitesVisited.findIndex(iFrameID.src)
+        console.log('above')
     }
     goToPage(sitesVisited[index]);
+    if (index == NaN) {
+        index = sitesVisited.findIndex(iFrameID.src)
+    }
+    else{
+        if (index == undefined){
+            index = sitesVisited.findIndex(iFrameID.src)
+        }
+    }
+    iFrameID.src = sitesVisited[index]
+    console.log(sitesVisited);
+    console.log(index);
+    console.log(sitesVisited.langth)
 }
 
 function Unlock() {
@@ -91,5 +118,4 @@ function addCode() {
 
 
 hide(document.getElementById("Website"))
-addCode();
 show(document.getElementById('UnlockButton'));
