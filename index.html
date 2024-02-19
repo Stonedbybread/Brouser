@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BreadBrowser</title>
     <link rel="icon" href="/Imgs/BreadIcon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <button id="UnlockButton"onclick="Unlock()">Enter Password</button>
     <div id="Website">
         <iframe id="frame" src="" style="border:0px #ffffff none;" name="Site" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="500" width="100%" allowfullscreen></iframe>
-        <div id="Buttons">
-            <img src="/Imgs/BreadBar.png" alt="">
+        <img src="/Imgs/BreadBar.png" alt="">
+        <div class="Buttons">
             <div id="Row1">
                 <button id="BingButton" onclick="BingButton()">Open Bing</button>
                 <button id="URLButton" onclick="redirect()">Change URL</button>
@@ -23,7 +24,7 @@
                 <button id="ForwardButton" onclick="Forward()">></button>
             </div>
         
-    </div>
+        </div>
     </div>
 
     <br id="add_after_me">
