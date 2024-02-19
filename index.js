@@ -34,6 +34,7 @@ function redirect() {
     }
     sitesVisited.push(URL)
     iFrameID.src = URL;
+    console.log(sitesVisited.length-1);
 }
 
 function goToPage(page) {
@@ -65,14 +66,6 @@ function Back() {
         index = 1
     }
     index -= 1
-    if (index == NaN) {
-        index = sitesVisited.findIndex(iFrameID.src)
-    }
-    else{
-        if (index == undefined){
-            index = sitesVisited.findIndex(iFrameID.src)
-        }
-    }
     goToPage(sitesVisited[index]);
     console.log(sitesVisited);
     console.log(index);
@@ -81,18 +74,9 @@ function Back() {
 function Forward() {
     index += 1
     if (index > sitesVisited.length-1) {
-        index = sitesVisited.findIndex(iFrameID.src)
-        console.log('above')
+        index -= 1
     }
     goToPage(sitesVisited[index]);
-    if (index == NaN) {
-        index = sitesVisited.findIndex(iFrameID.src)
-    }
-    else{
-        if (index == undefined){
-            index = sitesVisited.findIndex(iFrameID.src)
-        }
-    }
     iFrameID.src = sitesVisited[index]
     console.log(sitesVisited);
     console.log(index);
@@ -117,5 +101,6 @@ function addCode() {
 
 
 
-hide(document.getElementById("Website"))
+hide(document.getElementById("Website"));
 show(document.getElementById('UnlockButton'));
+console.log(sitesVisited.length-1);
