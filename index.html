@@ -10,12 +10,11 @@
 <body>
     <button id="UnlockButton"onclick="Unlock()">Enter Password</button>
     <div id="Website">
-        <iframe id="frame" src="" style="border:0px #ffffff none;" name="Site" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="500" width="100%" allowfullscreen></iframe>
+        <iframe id="frame" src="" style="border:5px #373737 block;" name="Site" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="500" width="100%" allowfullscreen></iframe>
         <img src="/Imgs/BreadBar.png" alt="">
         <div class="Buttons">
             <div id="Row1">
-                <button id="BingButton" onclick="BingButton()">Open Bing</button>
-                <button id="URLButton" onclick="redirect()">Change URL</button>
+                <button id="URLButton" onclick="redirect(iFrameID, sitesVisited)" class="centerButton">Change URL</button>
             </div>
             <br>
             <div id="Row2">
@@ -23,7 +22,8 @@
                 <button id="BackButton" onclick="Back()"><</button>
                 <button id="ForwardButton" onclick="Forward()">></button>
             </div>
-        
+            <br>
+            <button id="tabButton" onclick="OpenTab2()" class="centerButton">New Tab</button>
         </div>
     </div>
 

@@ -1,5 +1,10 @@
 .Buttons {
     position: relative;
-    top: -120px;
-    left: 25px;
+    top: -140px;
+    left: 35px;
+}
+
+.centerButton {
+    position: relative;
+    left: 45px;
 }
